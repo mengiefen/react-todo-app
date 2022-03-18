@@ -1,0 +1,29 @@
+.todoItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #999;
+  background-color: #ddd;
+  padding: 0 1rem;
+  margin: 0.2rem 1rem;
+  gap: 5%;
+}
+
+.todoText {
+  font-size: 1rem;
+  min-width: 40%;
+}
+
+.todoDelete {
+  background-color: #ee5500;
+  color: #eee;
+  padding: 0.5rem;
+}
+
+.todoCheck {
+  color: black;
+}
+
+.todoStatus {
+  color: #ee5500;
+}

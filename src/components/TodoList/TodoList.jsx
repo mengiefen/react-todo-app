@@ -25,6 +25,18 @@ export default class TodoList extends PureComponent {
     };
   }
 
+  handleChecked = (id) => {
+    console.log(id);
+    this.setState((prevState) => ({
+      todos: prevState.todos.map((todo) => {
+        if (todo.id === id) {
+          return { ...todo, completed: !todo.completed };
+        }
+        return todo;
+      }),
+    }));
+  };
+
   render() {
     const { todos } = this.state;
     return (
@@ -32,8 +44,10 @@ export default class TodoList extends PureComponent {
         {todos.map((todo) => (
           <TodoItem
             key={todo.id}
+            id={todo.id}
             title={todo.title}
             completed={todo.completed}
+            handleChecked={this.handleChecked}
           />
         ))}
       </div>

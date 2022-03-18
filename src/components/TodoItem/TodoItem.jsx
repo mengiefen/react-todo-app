@@ -4,24 +4,33 @@ import styles from './TodoItem.module.css';
 
 export default class TodoItem extends PureComponent {
   render() {
-    const statusStyle = {
-      color: 'red',
+    const todoItemCompleted = {
+      borderLeft: '1rem solid #004400',
     };
-    const completedStatus = {
+    const statusCompleted = {
       color: 'green',
     };
-    const { title, completed } = this.props;
+    const {
+      id,
+      title,
+      completed,
+      handleChecked,
+    } = this.props;
     return (
-      <div className={styles.todoItem}>
+      <div
+        className={styles.todoItem}
+        style={completed ? todoItemCompleted : {}}
+      >
         <input
           type="checkbox"
           className={styles.todoCheck}
           checked={completed}
+          onChange={() => handleChecked(id)}
         />
         <p className={styles.todoText}>{title}</p>
         <span
           className={styles.todoStatus}
-          style={completed ? completedStatus : statusStyle}
+          style={completed ? statusCompleted : {}}
         >
           STATUS
         </span>
@@ -36,4 +45,6 @@ export default class TodoItem extends PureComponent {
 TodoItem.propTypes = {
   title: PropTypes.string.isRequired,
   completed: PropTypes.bool.isRequired,
+  handleChecked: PropTypes.func.isRequired,
+  id: PropTypes.number.isRequired,
 };

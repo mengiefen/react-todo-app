@@ -52,5 +52,5 @@ TodoItem.propTypes = {
   completed: PropTypes.bool.isRequired,
   handleChecked: PropTypes.func.isRequired,
   onDelete: PropTypes.func.isRequired,
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
 };

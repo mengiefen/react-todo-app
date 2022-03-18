@@ -1,49 +1,11 @@
 import React, { PureComponent } from 'react';
+import PropTypes, { oneOfType } from 'prop-types';
+
 import TodoItem from '../TodoItem/TodoItem';
 
 export default class TodoList extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      todos: [
-        {
-          id: 1,
-          title: 'Setup development environment',
-          completed: true,
-        },
-        {
-          id: 2,
-          title: 'Develop website and add content',
-          completed: false,
-        },
-        {
-          id: 3,
-          title: 'Deploy to live server',
-          completed: false,
-        },
-      ],
-    };
-  }
-
-  handleDelete = (id) => {
-    this.setState((prevState) => ({
-      todos: prevState.todos.filter((todo) => todo.id !== id),
-    }));
-  };
-
-  handleChecked = (id) => {
-    this.setState((prevState) => ({
-      todos: prevState.todos.map((todo) => {
-        if (todo.id === id) {
-          return { ...todo, completed: !todo.completed };
-        }
-        return todo;
-      }),
-    }));
-  };
-
   render() {
-    const { todos } = this.state;
+    const { todos, handleChecked, handleDelete } = this.props;
     return (
       <div>
         {todos.map((todo) => (
@@ -52,11 +14,28 @@ export default class TodoList extends PureComponent {
             id={todo.id}
             title={todo.title}
             completed={todo.completed}
-            handleChecked={this.handleChecked}
-            onDelete={this.handleDelete}
+            handleChecked={handleChecked}
+            onDelete={handleDelete}
           />
         ))}
       </div>
     );
   }
 }
+
+TodoList.defaultProps = {
+  todos: [],
+};
+
+TodoList.propTypes = {
+  todos: PropTypes.arrayOf(
+    PropTypes.objectOf(
+      oneOfType(
+        PropTypes.bool.isRequired,
+        PropTypes.string.isRequired,
+      ),
+    ),
+  ),
+  handleChecked: PropTypes.func.isRequired,
+  handleDelete: PropTypes.func.isRequired,
+};

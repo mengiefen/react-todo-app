@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/Microverse-blueviolet) ![](https://img.shields.io/badge/MENGSTU-FENTAW-success) [![](https://img.shields.io/badge/LIVE-DEMO-blue)]()
+![](https://img.shields.io/badge/Microverse-blueviolet) ![](https://img.shields.io/badge/MENGSTU-FENTAW-success) [![](https://img.shields.io/badge/LIVE-DEMO-blue)](https://mengiefen.github.io/react-todo-app/)
 
 # Math Magician App
 
@@ -17,7 +17,7 @@ This "Todo" App is built with using React.js.
 
 ## Deployement
 
-  [Live Demo]()
+  [Live Demo](https://mengiefen.github.io/react-todo-app/)
 
 ## Built with
 
@@ -36,8 +36,7 @@ To get a local copy up and running follow these simple example steps.
 - Open terminal
 - Change the directory then run the following:
 
-  - Run `git clone ____________________`
-
+  - Run `git clone git@github.com:mengiefen/react-todo-app.git`
   - cd repo-name/
 
 ### Setup

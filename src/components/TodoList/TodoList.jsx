@@ -25,8 +25,13 @@ export default class TodoList extends PureComponent {
     };
   }
 
+  handleDelete = (id) => {
+    this.setState((prevState) => ({
+      todos: prevState.todos.filter((todo) => todo.id !== id),
+    }));
+  };
+
   handleChecked = (id) => {
-    console.log(id);
     this.setState((prevState) => ({
       todos: prevState.todos.map((todo) => {
         if (todo.id === id) {
@@ -48,6 +53,7 @@ export default class TodoList extends PureComponent {
             title={todo.title}
             completed={todo.completed}
             handleChecked={this.handleChecked}
+            onDelete={this.handleDelete}
           />
         ))}
       </div>

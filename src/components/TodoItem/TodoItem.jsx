@@ -15,6 +15,7 @@ export default class TodoItem extends PureComponent {
       title,
       completed,
       handleChecked,
+      onDelete,
     } = this.props;
     return (
       <div
@@ -34,7 +35,11 @@ export default class TodoItem extends PureComponent {
         >
           STATUS
         </span>
-        <button type="button" className={styles.todoDelete}>
+        <button
+          type="button"
+          className={styles.todoDelete}
+          onClick={() => onDelete(id)}
+        >
           Delete
         </button>
       </div>
@@ -46,5 +51,6 @@ TodoItem.propTypes = {
   title: PropTypes.string.isRequired,
   completed: PropTypes.bool.isRequired,
   handleChecked: PropTypes.func.isRequired,
+  onDelete: PropTypes.func.isRequired,
   id: PropTypes.number.isRequired,
 };

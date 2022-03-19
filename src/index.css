@@ -1,4 +1,16 @@
 body {
-  margin: 0; 
+  margin: 0;
   color: black;
+}
+
+.todo-holder {
+  display: flex;
+  background-color: rgba(164, 168, 168, 0.5);
+  justify-content: center;
+}
+
+.completed-todos,
+.ondue-todos {
+  margin: 1rem;
+  width: 45%;
 }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { FaTrash } from 'react-icons/fa';
 import styles from './TodoCompleted.module.css';
 
 function TodoCompleted(props) {
@@ -67,7 +68,7 @@ function TodoCompleted(props) {
         className={styles.todoDelete}
         onClick={() => onDelete(id)}
       >
-        Delete
+        <FaTrash />
       </button>
     </div>
   );

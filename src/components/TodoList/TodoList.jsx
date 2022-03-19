@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 import TodoOnDue from '../TodoOnDue/TodoOnDue';
 
 export default function TodoList(props) {
-  const { todos, handleChecked, handleDelete } = props;
+  const {
+    todos,
+    handleChecked,
+    handleDelete,
+    handleTodoEdit,
+  } = props;
   return (
     <div className="ondue-todos">
       <h2>OnDue Todos</h2>
@@ -15,6 +20,7 @@ export default function TodoList(props) {
             completed={todo.completed}
             handleChecked={handleChecked}
             onDelete={handleDelete}
+            handleTodoEdit={handleTodoEdit}
           />
         </div>
       ))}
@@ -36,4 +42,5 @@ TodoList.propTypes = {
   ),
   handleChecked: PropTypes.func.isRequired,
   handleDelete: PropTypes.func.isRequired,
+  handleTodoEdit: PropTypes.func.isRequired,
 };

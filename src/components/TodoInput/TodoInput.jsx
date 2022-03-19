@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { FaPlusCircle } from 'react-icons/fa';
 import styles from './TodoInput.module.css';
 
 function TodoInput(props) {
@@ -30,7 +31,9 @@ function TodoInput(props) {
         value={title}
         onChange={handleChange}
       />
-      <input type="submit" className={styles.todoAdd} value="Add" />
+      <button type="submit" className={styles.todoAdd}>
+        <FaPlusCircle />
+      </button>
     </form>
   );
 }

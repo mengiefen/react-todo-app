@@ -1,0 +1,49 @@
+.todoItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #999;
+  background-color: #ddd;
+  padding: 0 1rem;
+  margin: 0.2rem 1rem;
+  border-left: 1rem solid #7c2009;
+  gap: 5%;
+}
+
+.todoInputGroup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  
+  width: 95%;
+}
+
+.todoText {
+  font-size: 1rem;
+  width: 70%;
+  justify-self: flex-start;
+}
+
+.todoDelete {
+  background-color: #ee5500;
+  color: #eee;
+  padding: 0.5rem;
+}
+
+.todoCheck {
+  color: black;
+  width: 10%;
+}
+
+.todoStatus {
+  color: #ee5500;
+  width: 20%;
+}
+
+.todoInput {
+  font-size: 1rem;
+  padding: 0.8rem;
+  margin: 0.4rem;
+  width: 100%;
+  border: 2px solid #7c1d0c;
+  border-radius: 5px;
+}

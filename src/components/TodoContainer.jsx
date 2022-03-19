@@ -8,24 +8,32 @@ class TodoContainer extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      todos: [
-        {
-          id: uid(),
-          title: 'Setup development environment',
-          completed: true,
-        },
-        {
-          id: uid(),
-          title: 'Develop website and add content',
-          completed: false,
-        },
-        {
-          id: uid(),
-          title: 'Deploy to live server',
-          completed: false,
-        },
-      ],
+      todos: [],
     };
+  }
+
+  // componentDidMount() {
+  //   fetch('https://jsonplaceholder.typicode.com/todos')
+  //     .then((response) => response.json())
+  //     .then((data) => this.setState({ todos: data }));
+  // }
+
+  componentDidMount() {
+    const temp = localStorage.getItem('todos');
+    const loadedTodos = JSON.parse(temp);
+    if (loadedTodos) {
+      this.setState({
+        todos: loadedTodos,
+      });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { todos } = this.state;
+    if (prevState.todos !== todos) {
+      const temp = JSON.stringify(todos);
+      localStorage.setItem('todos', temp);
+    }
   }
 
   handleTodoEdit = (text, id) => {

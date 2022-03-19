@@ -2,6 +2,7 @@ import React from 'react';
 import { v4 as uid } from 'uuid';
 import TodoInput from './TodoInput/TodoInput';
 import TodoList from './TodoList/TodoList';
+import TodoListCompleted from './TodoListCompleted/TodoListCompleted';
 
 class TodoContainer extends React.PureComponent {
   constructor(props) {
@@ -55,15 +56,28 @@ class TodoContainer extends React.PureComponent {
 
   render() {
     const { todos } = this.state;
+    const onDueTodos = todos.filter(
+      (todo) => todo.completed === false,
+    );
+    const compltedTodos = todos.filter(
+      (todo) => todo.completed === true,
+    );
     return (
-      <div>
+      <>
         <TodoInput handleSubmit={this.handleSubmit} />
-        <TodoList
-          todos={todos}
-          handleChecked={this.handleChecked}
-          handleDelete={this.handleDelete}
-        />
-      </div>
+        <div className="todo-holder">
+          <TodoList
+            todos={onDueTodos}
+            handleChecked={this.handleChecked}
+            handleDelete={this.handleDelete}
+          />
+          <TodoListCompleted
+            todos={compltedTodos}
+            handleChecked={this.handleChecked}
+            handleDelete={this.handleDelete}
+          />
+        </div>
+      </>
     );
   }
 }

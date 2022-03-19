@@ -1,11 +1,20 @@
 .todoForm {
   margin: 0.2rem 1rem;
+  display: flex;
+  align-items: center;
 }
 
 .todoInput {
-  padding: 0.8rem;
+  font-size: 1rem;
+  padding: 1rem;
 }
 
 .todoAdd {
-  padding: 0.8rem;
+  padding: 0.75rem;
+}
+
+.todoAdd svg {
+  color: darkcyan;
+  font-size: 1.5rem;
+  margin-top: 2px;
 }

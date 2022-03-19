@@ -28,6 +28,18 @@ class TodoContainer extends React.PureComponent {
     };
   }
 
+  handleTodoEdit = (text, id) => {
+    const { todos } = this.state;
+    this.setState({
+      todos: todos.map((todo) => {
+        if (todo.id === id) {
+          return { ...todo, title: text };
+        }
+        return todo;
+      }),
+    });
+  };
+
   handleDelete = (id) => {
     this.setState((prevState) => ({
       todos: prevState.todos.filter((todo) => todo.id !== id),
@@ -70,11 +82,13 @@ class TodoContainer extends React.PureComponent {
             todos={onDueTodos}
             handleChecked={this.handleChecked}
             handleDelete={this.handleDelete}
+            handleTodoEdit={this.handleTodoEdit}
           />
           <TodoListCompleted
             todos={compltedTodos}
             handleChecked={this.handleChecked}
             handleDelete={this.handleDelete}
+            handleTodoEdit={this.handleTodoEdit}
           />
         </div>
       </>

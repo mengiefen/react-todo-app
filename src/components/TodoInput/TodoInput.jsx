@@ -27,6 +27,7 @@ function TodoInput(props) {
         name="title"
         placeholder="Add your todos here"
         className={styles.todoInput}
+        value={title}
         onChange={handleChange}
       />
       <input type="submit" className={styles.todoAdd} value="Add" />

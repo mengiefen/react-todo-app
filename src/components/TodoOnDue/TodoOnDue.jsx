@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './TodoOnDue.module.css';
 
@@ -13,6 +13,10 @@ export default function TodoOnDue(props) {
   } = props;
   const [editing, setEditing] = useState(false);
   const [text, setText] = useState('');
+
+  useEffect(() => {
+    console.log('Cleaning up ....');
+  }, [props]);
 
   const handleEditing = (e) => {
     setEditing(true);

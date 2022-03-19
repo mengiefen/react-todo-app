@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { FaTrash } from 'react-icons/fa';
+// import { BsCheckAll } from 'react-icons/';
 import styles from './TodoCompleted.module.css';
 
 function TodoCompleted(props) {

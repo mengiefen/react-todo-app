@@ -3,11 +3,12 @@
   justify-content: space-between;
   align-items: center;
   border: 1px solid #999;
+  border-radius: 5px;
   background-color: #ddd;
   padding: 0 1rem;
   margin: 0.2rem 1rem;
   border-left: 1rem solid #7c2009;
-  gap: 5%;
+  gap: 5%; 
 }
 
 .todoInputGroup {
@@ -24,9 +25,11 @@
 }
 
 .todoDelete {
-  background-color: #ee5500;
-  color: #eee;
-  padding: 0.5rem;
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 .todoCheck {
@@ -46,4 +49,16 @@
   width: 100%;
   border: 2px solid #7c1d0c;
   border-radius: 5px;
+}
+
+.todoDelete svg {
+  color: darkcyan;
+  font-size: 20px;
+  margin-top: 2px; 
+  font-size: 1.5rem;
+  transition: color 0.5s;
+}
+
+.todoDelete svg:hover {
+  color: rgb(155, 7, 7);
 }

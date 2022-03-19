@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { FaTrash } from 'react-icons/fa';
 import styles from './TodoOnDue.module.css';
 
 export default function TodoOnDue(props) {
@@ -13,10 +14,6 @@ export default function TodoOnDue(props) {
   } = props;
   const [editing, setEditing] = useState(false);
   const [text, setText] = useState('');
-
-  useEffect(() => {
-    console.log('Cleaning up ....');
-  }, [props]);
 
   const handleEditing = (e) => {
     setEditing(true);
@@ -74,7 +71,7 @@ export default function TodoOnDue(props) {
         className={styles.todoDelete}
         onClick={() => onDelete(id)}
       >
-        Delete
+        <FaTrash />
       </button>
     </div>
   );

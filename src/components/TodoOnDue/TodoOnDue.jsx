@@ -3,6 +3,14 @@ import PropTypes from 'prop-types';
 import styles from './TodoOnDue.module.css';
 
 export default function TodoOnDue(props) {
+  const {
+    id,
+    title,
+    completed,
+    handleChecked,
+    onDelete,
+    handleTodoEdit,
+  } = props;
   const [editing, setEditing] = useState(false);
   const [text, setText] = useState('');
 
@@ -13,7 +21,13 @@ export default function TodoOnDue(props) {
 
   const handleEdit = (e) => {
     setText(e.target.value);
-    console.log(e.target.value);
+  };
+
+  const handleSubmit = (e, id) => {
+    if (e.key === 'Enter') {
+      handleTodoEdit(text, id);
+      setEditing(false);
+    }
   };
 
   const viewMode = {};
@@ -24,13 +38,6 @@ export default function TodoOnDue(props) {
   } else {
     editMode.display = 'none';
   }
-  const {
-    id,
-    title,
-    completed,
-    handleChecked,
-    onDelete,
-  } = props;
 
   return (
     <div
@@ -56,6 +63,7 @@ export default function TodoOnDue(props) {
         className={styles.todoInput}
         value={text}
         onChange={handleEdit}
+        onKeyDown={(e) => handleSubmit(e, id)}
       />
       <button
         type="button"
@@ -74,4 +82,5 @@ TodoOnDue.propTypes = {
   handleChecked: PropTypes.func.isRequired,
   onDelete: PropTypes.func.isRequired,
   id: PropTypes.string.isRequired,
+  handleTodoEdit: PropTypes.func.isRequired,
 };

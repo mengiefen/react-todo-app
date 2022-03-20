@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { FaTrash } from 'react-icons/fa';
-// import { BsCheckAll } from 'react-icons/';
+import { BsCheckAll, BsTrash } from 'react-icons/bs';
 import styles from './TodoCompleted.module.css';
 
 function TodoCompleted(props) {
@@ -54,7 +53,7 @@ function TodoCompleted(props) {
           className={styles.todoStatus}
           style={{ color: 'green' }}
         >
-          STATUS
+          <BsCheckAll style={{ fontSize: '1.5rem' }} />
         </span>
       </div>
       <input
@@ -69,7 +68,7 @@ function TodoCompleted(props) {
         className={styles.todoDelete}
         onClick={() => onDelete(id)}
       >
-        <FaTrash />
+        <BsTrash />
       </button>
     </div>
   );

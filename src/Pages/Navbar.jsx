@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { MdClose } from 'react-icons/md';
-import { FiMenu } from 'react-icons/fi';
+import { FaAngleDoubleRight } from 'react-icons/fa';
 
 function Navbar() {
   const links = [
@@ -31,15 +31,15 @@ function Navbar() {
         {navbarOpen ? (
           <MdClose
             style={{
-              color: '#770000',
+              color: '#990000',
               fontSize: '2.5rem',
             }}
           />
         ) : (
-          <FiMenu
+          <FaAngleDoubleRight
             style={{
-              color: '#770000',
-              fontSize: '2.5rem',
+              color: '#eee',
+              fontSize: '2rem',
             }}
           />
         )}

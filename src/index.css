@@ -1,6 +1,13 @@
 body {
   margin: 0;
+  box-sizing: border-box;
+  padding: 0;
   color: black;
+}
+
+#root {
+  margin: 0;
+  padding: 0;
 }
 
 .todo-holder {
@@ -13,4 +20,97 @@ body {
 .ondue-todos {
   margin: 1rem;
   width: 45%;
+}
+
+.active-link {
+  color: orangered;
+  text-decoration: underline;
+}
+
+.navBar {
+  position: relative;
+}
+
+.navBar button {
+  background-color: transparent;
+  border: none;
+  position: fixed;
+  left: 0;
+  top: 1.5rem;
+  z-index: 10;
+  padding: 0;
+  cursor: pointer;
+}
+
+.menuNav {
+  margin: 0;
+  overflow-y: scroll;
+  list-style: none;
+  position: fixed;
+  top: 0;
+  background: darkcyan;
+  left: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 0;
+  overflow: hidden;
+  max-width: 290px;
+  z-index: 9;
+}
+
+.menuNav.showMenu {
+  width: 100%;
+}
+
+a {
+  display: block;
+  padding: 10px 40px;
+  text-decoration: none;
+  color: #3fffd2;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.menuNav li:first-child {
+  margin-top: 7rem;
+}
+
+.todo-page {
+  padding: 2rem 40px;
+}
+
+.about-page {
+  padding: 8rem 40px;
+  display: flex;
+}
+
+.about-list {
+  list-style: none;
+  flex: 2;
+  margin-right: 15px;
+}
+
+.about-list a {
+  color: #9f9f9f;
+  text-transform: capitalize;
+  padding: 20px 0;
+  font-weight: 600;
+}
+
+.about-list a:hover {
+  color: #000;
+}
+
+.main-content {
+  flex: 7;
+}
+
+.main-content h1 {
+  margin-bottom: 15px;
+  line-height: 30px;
+  font-size: 30px;
+}
+
+.main-content p {
+  line-height: 25px;
 }

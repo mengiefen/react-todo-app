@@ -32,7 +32,7 @@ TodoListCompleted.defaultProps = {
 TodoListCompleted.propTypes = {
   todos: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string.isRequired,
+      id: PropTypes.number.isRequired,
       completed: PropTypes.bool.isRequired,
       title: PropTypes.string.isRequired,
     }),

@@ -1,14 +1,21 @@
 import React from 'react';
-import TodoContainer from './components/TodoContainer';
-import Header from './components/Header/Header';
+import { Routes, Route } from 'react-router-dom';
+import TodoPage from './Pages/TodoPage';
+import About from './Pages/About';
+import NoMatch from './Pages/NoMatch';
+import Navbar from './Pages/Navbar';
 
-export default class App extends React.PureComponent {
-  render() {
-    return (
-      <div>
-        <Header />
-        <TodoContainer />
-      </div>
-    );
-  }
+function App() {
+  return (
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<TodoPage />} />
+        <Route path="about/*" element={<About />} />
+        <Route path="*" element={<NoMatch />} />
+      </Routes>
+    </>
+  );
 }
+
+export default App;

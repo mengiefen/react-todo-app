@@ -16,7 +16,7 @@
 }
 
 .todoDelete {
-  background-color: #ee5500;
+  background-color: #e50;
   color: #eee;
   padding: 0.5rem;
 }
@@ -26,5 +26,5 @@
 }
 
 .todoStatus {
-  color: #ee5500;
+  color: #e50;
 }

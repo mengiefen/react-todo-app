@@ -1,3 +1,13 @@
+:root {
+  --dark-blue: #061e3d;
+  --blue: #0a4b77;
+  --cyan: #0d6c86;
+  --dark-green: #075a48;
+  --light-red: #88290c;
+  --light-gray: #aaa;
+  --light: #eee;
+}
+
 .todoItem {
   display: flex;
   justify-content: space-between;
@@ -6,9 +16,8 @@
   border-radius: 5px;
   background-color: #ddd;
   padding: 0 1rem;
-  margin: 0.2rem 1rem;
-  border-left: 1rem solid #7c2009;
-  gap: 5%;
+  margin: 0.2rem 0;
+  border-left: 1rem solid var(--dark-green);
 }
 
 .todoInputGroup {
@@ -20,7 +29,7 @@
 
 .todoText {
   font-size: 1rem;
-  width: 70%;
+  width: 60%;
   justify-self: flex-start;
 }
 
@@ -47,17 +56,17 @@
   padding: 0.8rem;
   margin: 0.4rem;
   width: 100%;
-  border: 2px solid #10574b;
+  border: 2px solid #7c1d0c;
   border-radius: 5px;
 }
 
 .todoDelete svg {
-  color: darkcyan;
+  color: var(--blue);
   margin-top: 2px;
   font-size: 1.5rem;
   transition: color 0.5s;
 }
 
 .todoDelete svg:hover {
-  color: rgb(155, 7, 7);
+  color: var(--light-red);
 }

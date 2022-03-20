@@ -1,22 +1,54 @@
+:root {
+  --dark-blue: #061e3d;
+  --blue: #0a4b77;
+  --cyan: #0d6c86;
+  --dark-green: #075a48;
+  --light-red: #88290c;
+  --light-gray: #aaa;
+  --light: #eee;
+}
+
 .todoForm {
-  margin: 0.2rem 5rem;
   display: flex;
   justify-content: center;
-  width: 50vw;
+  width: 40vw;
+  position: relative;
 }
 
 .todoInput {
   font-size: 1rem;
   padding: 1rem;
-  width: 95%;
+  width: 100%;
+  border: 2px solid var(--light-gray);
+  background-color: var(--light);
+  border-radius: 1rem;
+  transition: border 0.5s;
+  outline: none;
+}
+
+.todoInput:focus,
+.todoInput:hover {
+  border: 2px solid var(--dark-green);
 }
 
 .todoAdd {
-  padding: 0.75rem;
+  border-left: none;
+  background-color: var(--light);
+  position: absolute;
+  right: 1rem;
+  top: 15%;
+  border: none;
+  outline: none;
+  padding: 0;
 }
 
 .todoAdd svg {
   color: darkcyan;
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin-top: 2px;
+  transition: color 0.5s;
+}
+
+.todoAdd svg:hover {
+  color: var(--cyan);
 }

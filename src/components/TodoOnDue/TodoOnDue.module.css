@@ -17,7 +17,9 @@
   background-color: #ddd;
   padding: 0 1rem;
   margin: 0.2rem 0;
+  min-width: 40vw;
   border-left: 1rem solid var(--light-red);
+ 
 }
 
 .todoInputGroup {

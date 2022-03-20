@@ -8,7 +8,7 @@ export default class TodoListCompleted extends PureComponent {
     const { todos, handleChecked, handleDelete } = this.props;
     return (
       <div className="completed-todos">
-        <h2>Completed Todos</h2>
+        <h2 className="completed-section-header">Completed Todos</h2>
         {todos.map((todo) => (
           <div key={todo.id} className="todo-item">
             <TodoCompleted

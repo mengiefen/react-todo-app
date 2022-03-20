@@ -11,7 +11,7 @@ export default function TodoList(props) {
   } = props;
   return (
     <div className="ondue-todos">
-      <h2>OnDue Todos</h2>
+      <h2 className="todo-section-header">OnDue Todos</h2>
       {todos.map((todo) => (
         <div key={todo.id} className="todo-item">
           <TodoOnDue

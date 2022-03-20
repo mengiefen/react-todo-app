@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { FaTrash } from 'react-icons/fa';
+import { BsTrash } from 'react-icons/bs';
 import styles from './TodoOnDue.module.css';
 
 export default function TodoOnDue(props) {
@@ -55,7 +55,7 @@ export default function TodoOnDue(props) {
         <span
           className={styles.todoStatus}
         >
-          STATUS
+          On Due
         </span>
       </div>
       <input
@@ -71,7 +71,7 @@ export default function TodoOnDue(props) {
         className={styles.todoDelete}
         onClick={() => onDelete(id)}
       >
-        <FaTrash />
+        <BsTrash />
       </button>
     </div>
   );

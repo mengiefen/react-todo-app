@@ -19,7 +19,6 @@
   margin: 0.2rem 0;
   min-width: 40vw;
   border-left: 1rem solid var(--light-red);
- 
 }
 
 .todoInputGroup {
@@ -33,6 +32,7 @@
   font-size: 1rem;
   width: 60%;
   justify-self: flex-start;
+  overflow-wrap: break-word;
 }
 
 .todoDelete {

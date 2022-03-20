@@ -82,6 +82,6 @@ TodoOnDue.propTypes = {
   completed: PropTypes.bool.isRequired,
   handleChecked: PropTypes.func.isRequired,
   onDelete: PropTypes.func.isRequired,
-  id: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
   handleTodoEdit: PropTypes.func.isRequired,
 };

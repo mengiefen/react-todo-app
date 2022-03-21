@@ -2,7 +2,7 @@
 
 :root {
   --dark-blue: #061e3d;
-  --blue: #0a4b77;
+  --orange: #f56411;
   --cyan: #0d6c86;
   --dark-green: #075a48;
   --light-red: #88290c;
@@ -17,6 +17,7 @@ body {
   color: var(--dark-blue);
   font-family: Roboto, serif;
   background-color: var(--light);
+  position: relative;
 }
 
 #root {
@@ -37,23 +38,49 @@ body {
 }
 
 .active-link {
-  color: orangered;
+  color: var(--orange);
   text-decoration: underline;
 }
 
 .navBar {
-  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .navBar button {
   background-color: transparent;
   border: none;
   position: fixed;
-  left: 0;
+  left: 0.2rem;
   top: 1.5rem;
   z-index: 10;
   padding: 0;
   cursor: pointer;
+}
+
+.iconNav {
+  width: 0;
+  position: fixed;
+  top: 3rem;
+  left: 0;
+  list-style: none;
+  z-index: 200;
+  padding: 0;
+}
+
+.iconNav svg {
+  padding: 0.5rem 0 0.5rem 0.2rem;
+  transition: all 0.65s;
+}
+
+.iconNav svg:hover {
+  padding-right: 1.2rem;
+  background-color: var(--dark-blue);
+  border-radius: 0 50% 50% 0;
+}
+
+.iconNav .showIcon {
+  display: block;
 }
 
 .menuNav {
@@ -62,9 +89,8 @@ body {
   list-style: none;
   position: fixed;
   top: 0;
-  background: darkcyan;
+  background: var(--dark-blue);
   left: 0;
-  bottom: 0;
   height: 100vh;
   width: 0;
   overflow: hidden;
@@ -78,9 +104,9 @@ body {
 
 a {
   display: block;
-  padding: 10px 40px;
+  padding: 10px 0;
   text-decoration: none;
-  color: #3fffd2;
+  color: var(--light);
   text-transform: uppercase;
   font-weight: bold;
 }

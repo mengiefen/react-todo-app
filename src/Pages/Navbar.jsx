@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { MdClose } from 'react-icons/md';
-import { FaAngleDoubleRight } from 'react-icons/fa';
+import { FaAngleDoubleRight, FaHome } from 'react-icons/fa';
+import { BsFillQuestionSquareFill } from 'react-icons/bs';
 
 function Navbar() {
   const links = [
@@ -9,11 +10,13 @@ function Navbar() {
       id: 1,
       path: '/',
       text: 'Home',
+      icon: <FaHome style={{ fontSize: '2rem' }} />,
     },
     {
       id: 2,
       path: '/about',
       text: 'About',
+      icon: <BsFillQuestionSquareFill style={{ fontSize: '2rem' }} />,
     },
   ];
   const [navbarOpen, setNavbarOpen] = useState(false);
@@ -32,7 +35,7 @@ function Navbar() {
           <MdClose
             style={{
               color: '#990000',
-              fontSize: '2.5rem',
+              fontSize: '2rem',
             }}
           />
         ) : (
@@ -44,9 +47,29 @@ function Navbar() {
           />
         )}
       </button>
-      <ul className={`menuNav ${navbarOpen ? 'showMenu' : ''}`}>
+      <ul
+        style={navbarOpen ? { display: 'none' } : { display: 'block' }}
+        className={`iconNav ${!navbarOpen ? 'showIcon' : ''}`}
+      >
         {links.map((link) => (
           <li key={link.id}>
+            <NavLink
+              to={link.path}
+              className={(path) => {
+                if (path.isActive) return 'active-link';
+                return '';
+              }}
+              onClick={() => closeMenu()}
+            >
+              {link.icon}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
+
+      <ul className={`menuNav ${navbarOpen ? 'showMenu' : ''}`}>
+        {links.map((link) => (
+          <li key={link.id} className={navbarOpen ? '' : 'closeMenu'}>
             <NavLink
               to={link.path}
               className={(path) => {

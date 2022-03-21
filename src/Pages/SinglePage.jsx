@@ -13,7 +13,7 @@ function SinglePage() {
       common: 'about-author',
       title: 'About the Author',
       description:
-        'This app was developed by Ibas Majid, a self-taught web developer and a technical writer. He is opened to freelance Gig. So go ahead and connect with ibas on Twitter @ibaslogic.',
+        'This app was refactored by Mengistu F., a Micorverse Student. The app is developed following the woderful tutorial by Ibas Majid, a self-taught web developer and a technical writer.',
     },
   ];
   const { common } = useParams();
@@ -21,7 +21,7 @@ function SinglePage() {
   const { title, description } = aboutContent;
   return (
     <div className="main-content">
-      <h1>{title}</h1>
+      <h1 className="about-heading">{title}</h1>
       <p>{description}</p>
     </div>
   );

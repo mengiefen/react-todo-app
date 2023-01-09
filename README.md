@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet) ![](https://img.shields.io/badge/MENGSTU-FENTAW-success) [![](https://img.shields.io/badge/LIVE-DEMO-blue)](https://mengiefen.github.io/react-todo-app/)
 
-# Math Magician App
+# Todo App
 
 The "Todo" React app is a website for users to manage thier tasks. It is a Single Page App (SPA) that allows users to:
 
